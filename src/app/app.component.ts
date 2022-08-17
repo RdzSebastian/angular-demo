@@ -15,10 +15,17 @@ export class AppComponent {
 
   mayor: Boolean = false;
 
-  adicionalesDatros: any;
+  datosAdicionales: any;
 
   datos: any;
 
   amigos: Array <any> = [];
 
+  ngOnInit(): void {
+    this.palabra =  "Hola mundo";
+    this.edad = 50;
+    this.mayor = this.edad > 18;
+    this.datosAdicionales = {edad:20, sueldo:25000, nombre: "Juan", mayor: true};
+    this.amigos = [{nombre: "Carlos", edad: 35}, {nombre: "Andrea", edad:25}, {nombre: "Sebastian", edad: 30}];
+  }
 }

@@ -1,0 +1,25 @@
+<div class="container">
+
+    <h2>El valor de la variables es: {{palabra}}</h2>
+    
+    <h2>Tu edad es: {{edad}}</h2>
+    
+    <div class="row">
+        <div class="col-3">
+            <h2>Eres mayor: </h2>
+        </div>
+        <div class="col-6">
+            <input type="checkbox" [checked]="mayor">
+        </div>
+    </div>
+
+    <h2>Datos adicionales JSON: {{datosAdicionales.edad}}, {{datosAdicionales.sueldo}}, {{datosAdicionales.nombre}}, {{datosAdicionales.mayor}}</h2>
+
+    <h2>Lista de amigos: {{amigos}}</h2>
+
+    <ul *ngFor="let item of amigos">
+        <li>Mi amigo se llama: {{item.nombre}} y su edad es: {{item.edad}} años</li>
+    </ul>
+
+
+</div>
