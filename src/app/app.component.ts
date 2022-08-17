@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-demo';
+
+  palabra: String = "";
+
+  edad: Number = 0;
+
+  mayor: Boolean = false;
+
+  adicionalesDatros: any;
+
+  datos: any;
+
+  amigos: Array <any> = [];
+
 }
