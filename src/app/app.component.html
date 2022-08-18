@@ -1,31 +1,34 @@
-<app-navbar></app-navbar>
+<div class="min-vh-100 d-flex flex-column justify-content-between">
+    <app-navbar></app-navbar>
 
-<app-header></app-header>
+    <app-header></app-header>
 
-<app-footer></app-footer>
+    <div class="container">
 
-<div class="container">
+        <h2>El valor de la variables es: {{palabra}}</h2>
 
-    <h2>El valor de la variables es: {{palabra}}</h2>
-    
-    <h2>Tu edad es: {{edad}}</h2>
-    
-    <div class="row">
-        <div class="col-3">
-            <h2>Eres mayor: </h2>
+        <h2>Tu edad es: {{edad}}</h2>
+
+        <div class="row">
+            <div class="col-3">
+                <h2>Eres mayor: </h2>
+            </div>
+            <div class="col-6">
+                <input type="checkbox" [checked]="mayor">
+            </div>
         </div>
-        <div class="col-6">
-            <input type="checkbox" [checked]="mayor">
+
+        <h2>Datos adicionales JSON: {{datosAdicionales.edad}}, {{datosAdicionales.sueldo}}, {{datosAdicionales.nombre}},
+            {{datosAdicionales.mayor}}</h2>
+
+        <h2>Lista de amigos:</h2>
+
+        <div *ngFor="let item of amigos">
+            <h4>Nombre: {{item.nombre}}, Edad: {{item.edad}} años</h4>
         </div>
+
+
     </div>
 
-    <h2>Datos adicionales JSON: {{datosAdicionales.edad}}, {{datosAdicionales.sueldo}}, {{datosAdicionales.nombre}}, {{datosAdicionales.mayor}}</h2>
-
-    <h2>Lista de amigos: {{amigos}}</h2>
-
-    <ul *ngFor="let item of amigos">
-        <li>Mi amigo se llama: {{item.nombre}} y su edad es: {{item.edad}} años</li>
-    </ul>
-
-
+    <app-footer></app-footer>
 </div>
