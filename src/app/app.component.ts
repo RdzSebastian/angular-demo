@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
+import { PersonajeService } from './service/personaje/personaje.service';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,15 @@ export class AppComponent {
 
   amigos: Array <any> = [];
 
+  personajes: any = {};
+  constructor(private service: PersonajeService){}
+
   ngOnInit(): void {
+    this.service.getAllPersonajes().subscribe(personajes => {
+      this.personajes = personajes.results
+      console.log(personajes.results)
+    })
+  
     this.palabra =  "Hola mundo";
     this.edad = 50;
     this.mayor = this.edad > 18;

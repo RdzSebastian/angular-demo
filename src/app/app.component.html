@@ -20,15 +20,19 @@
 
         <h2>Datos adicionales JSON: {{datosAdicionales.edad}}, {{datosAdicionales.sueldo}}, {{datosAdicionales.nombre}},
             {{datosAdicionales.mayor}}</h2>
-
+ 
         <h2>Lista de amigos:</h2>
 
         <div *ngFor="let item of amigos">
             <h4>Nombre: {{item.nombre}}, Edad: {{item.edad}} años</h4>
         </div>
-
-
     </div>
+
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of personajes">
+            {{item.name}}
+        </li>
+    </ul>
 
     <app-footer></app-footer>
 </div>
