@@ -6,14 +6,14 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class PaisService {
-  private API_SERVER = "http://localhost:8080/rest/allPais"
+  private API_SERVER = "http://localhost:8080/rest"
 
   constructor(
     private httpClient: HttpClient
   ) { }
 
   public getAllPais(): Observable<any> {
-    return this.httpClient.get(this.API_SERVER)
+    return this.httpClient.get(this.API_SERVER + "/allPais")
   }
 
 }

@@ -6,14 +6,14 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class EstadoService {
-  private API_SERVER = "http://localhost:8080/rest/getAllEstadosByPais"
+  private API_SERVER = "http://localhost:8080/rest"
 
   constructor(
     private httpClient: HttpClient
   ) { }
 
   public getAllEstadosByPais(idPais: string): Observable<any> {
-    return this.httpClient.get(this.API_SERVER + "/" + idPais)
+    return this.httpClient.get(this.API_SERVER + "/getAllEstadosByPais/" + idPais)
   }
 
 }
