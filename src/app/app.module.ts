@@ -14,6 +14,8 @@ import { PersonajesComponent } from './layout/personajes/personajes.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './layout/home/home.component';
+import { SpringbootComponent } from './layout/springboot/springboot.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -27,6 +29,10 @@ const routes: Routes = [
   {
     path: 'personajes',
     component: PersonajesComponent,
+  },
+  {
+    path: 'springboot',
+    component: SpringbootComponent,
   }
 ];
 
@@ -38,13 +44,15 @@ const routes: Routes = [
     NavbarComponent,
     PruebasComponent,
     PersonajesComponent,
-    HomeComponent
+    HomeComponent,
+    SpringbootComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

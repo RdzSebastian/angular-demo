@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+
+<app-header></app-header>
+
+<form [formGroup]="personaForm" (ngSubmit)="guardar">
+    <div class="my-3 d-flex flex-column align-items-center">
+        <div class="form-group col-4 m-3">
+            <label for="nombre">Nombre</label>
+            <input class="form-control" formControlName="nombre" type="text" id="nombre">
+        </div>
+        <div class="form-group col-4 m-3">
+            <label for="apellido">Apellido</label>
+            <input class="form-control" formControlName="apellido" type="text" id="apellido">
+        </div>
+        <div class="form-group col-4 m-3">
+            <label for="edad">Edad</label>
+            <input class="form-control" formControlName="edad" type="number" id="edad">
+        </div>
+        <div class="form-group col-4 m-3">
+            <label for="pais">Pais</label>
+            <select class="form-control" formControlName="pais" type="text" id="pais" name="pais"
+                (change)="getAllEstadosByPais($event)">
+                <option [value]="item.id" *ngFor="let item of paises">{{item.nombre}}</option>
+            </select>
+        </div>
+        <div class="form-group col-4 m-3">
+            <label for="estado">Estado</label>
+            <select class="form-control" formControlName="estado" type="text" id="estado" name="estado">
+                <option value="item.id" *ngFor="let item of estados">{{item.nombre}}</option>
+            </select>
+        </div>
+        <div class="form-group col-4 m-3 text-center">
+            <button type="submit" class="btn btn-primary w-100">Guardar</button>
+        </div>
+
+    </div>
+
+</form>
+
+
+
+<app-footer></app-footer>
